@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CayeDine - Restaurant</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+   
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo.png" style=" height: 50px;" alt="Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+         <li class="nav-item"><a class="nav-link text-white" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="about.html">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="recipes.html">RECIPES</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
+
+        <!-- Dropdown for Reservation -->
+        <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  RESERVATION <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="reservation.html">Reservation</a>
+            <a class="dropdown-item" href="cart.html">Cart</a>
+            <a class="dropdown-item" href="shipping.html">Shipping</a>
+            <a class="dropdown-item" href="payment.html">Payment</a>
+            <a class="dropdown-item" href="confirmation.html">Confirmation</a>
+          </div>
+        </li>
+
+        <!-- Dropdown for Blog -->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  BLOG <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="blog.html">Blog</a>
+            <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section Carousel -->
+   <section>
+  <div id="heroCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('img/slide-1.jpg');">
+        <div class="carousel-caption">
+          <h1><span>Welcome to restaurant</span>Fresh,Delicious meal to<br />reach your optimum health<br />and fitness</h1>
+          <button class="btn btn-menu" onclick="location.href='foodmenu.html'">VIEW MENU</button>
+
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('img/slide-2.jpg');">
+        <div class="carousel-caption">
+          <h1><span>Welcome to restaurant</span>Fresh,Delicious meal to<br />reach your optimum health<br />and fitness</h1>
+          <button class="btn btn-menu" onclick="location.href='foodmenu.html'">VIEW MENU</button>
+
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('img/slide-3.jpg');">
+        <div class="carousel-caption">
+          <h1><span>Welcome to restaurant</span>Fresh,Delicious meal to<br />reach your optimum health<br />and fitness</h1>
+          <button class="btn btn-menu" onclick="location.href='foodmenu.html'">VIEW MENU</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+
+ <!-- Features Section -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-wrap bg-white">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="intro-item">
+            <img src="img/foo.png" alt="Food">
+            <h3 class="mt-3">Delicious Food</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="intro-item bg-gray">
+            <img src="img/i1.png" alt="Order">
+            <h3 class="mt-3">Online Order</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="intro-item">
+            <img src="img/loca.png" alt="Delivery">
+            <h3 class="mt-3">Free Delivery</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="about-text">
+      <p class="subtitle">About CafeDine</p>
+      <h2>We Are A Modern Restaurant In The Center Of The City</h2>
+    </div>
+
+    <div class="about-cards">
+      <div class="card">
+        <img src="img/img-1.jpg" alt="Quality Food">
+        <h4>Quality Food</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit maiores fugit illo deserunt!</p>
+      </div>
+      <div class="card">
+        <img src="img/img-2.jpg" alt="Friendly Place">
+        <h4>Friendly Place</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit maiores fugit illo deserunt!</p>
+      </div>
+      <div class="card">
+        <img src="img/img-3.jpg" alt="Affordable Price">
+        <h4>Affordable Price</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit maiores fugit illo deserunt!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="call-to-action">
+  <img src="../img/cta-bg.jpg" alt="Background" class="cta-bg-img" />
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <span class="font-extra text-md-2">Prepare The Best Dishes</span>
+        <h2 class="mt-3 mb-4">Come &amp; Experience Our Best of World Class Cousine</h2>
+        <a href="#" class="btn btn-white">book now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="cafe-dine-dishes-section">
+        <div class="container">
+        <h3 class="section-title-top">CafeDine Dishes</h3>
+        <h2 class="section-title-main">We Provide Quality Food. We Care<br>About Your Health</h2>
+
+        <nav class="menu-tabs">
+            <ul>
+                <li><a href="#all" class="active">ALL</a></li>
+                <li><a href="#starter">STARTER</a></li>
+                <li><a href="#launch">LAUNCH</a></li>
+                <li><a href="#dinner">DINNER</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-items-grid">
+            <div class="menu-item" data-category="starter dinner">
+                <img src="img/m (1).jpg" alt="Vitello Tonato">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Vitello Tonato</span>
+                        <span class="item-price">- 23$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+            <div class="menu-item" data-category="launch">
+                <img src="img/m (2).jpg" alt="Crema Di Pomodoro">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Crema Di Pomodoro</span>
+                        <span class="item-price">- 34$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+            <div class="menu-item" data-category="dinner">
+                <img src="img/m (3).jpg" alt="Oatmeal Cookie">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Oatmeal Cookie</span>
+                        <span class="item-price">- 13$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+            <div class="menu-item" data-category="starter launch">
+                <img src="img/m (4).jpg" alt="Seasonal Soup">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Seasonal Soup</span>
+                        <span class="item-price">- 10$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+            <div class="menu-item" data-category=" dinner">
+                <img src="img/m (5).jpg" alt="Pizza Pane">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Pizza Pane</span>
+                        <span class="item-price">- 28$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+            <div class="menu-item" data-category="starter dinner">
+                <img src="img/m (6).jpg" alt="Carpacio">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Carpacio</span>
+                        <span class="item-price">- 20$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+            <div class="menu-item" data-category=" launch">
+                <img src="img/m (7).jpg" alt="Insalata Rucola">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Insalata Rucola</span>
+                        <span class="item-price">- 15$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+            <div class="menu-item" data-category="starter launch">
+                <img src="img/m (8).jpg" alt="Carpacio">
+                <div class="item-details">
+                    <div class="item-name-price">
+                        <span class="item-name">Carpacio</span>
+                        <span class="item-price">- 13$</span>
+                    </div>
+                    <p class="item-description">Chinese mustard/Chipotle aioli</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-full-menu-container">
+            <button class="view-full-menu-btn">VIEW FULL MENU</button>
+        </div>
+    </div>
+</section>
+
+<section class="get-app-section">
+    <div class="container">
+        <div class="phone-mockup-column">
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <img src="img/CafeDine.jpg" alt="App screen content">
+                </div>
+            </div>
+        </div>
+        <div class="app-info-column">
+            <p class="sub-heading-red">Make it easy</p>
+            <h2 class="main-heading-app">Get The CafeDine App</h2>
+            <p class="app-description">Get instant access to recipes from celebrity Cafedia and world-renowned brands right in your pocket.</p>
+            <div class="app-store-buttons">
+                <a href="#" class="store-btn google-play-btn">
+                    <img src="img/andp (1).png" alt="Google Play Icon">
+                    <div class="store-btn-text">
+                        <span>GET IT ON</span>
+                        <p>Google Play</p>
+                    </div>
+                </a>
+                <a href="#" class="store-btn app-store-btn">
+                    <img src="img/andp (2).png" alt="App Store Icon">
+                    <div class="store-btn-text">
+                        <span>GET IT ON</span>
+                        <p>App Store</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Instagram Section -->
+<section class="instagram-section position-relative">
+  <div class="insta-center-btn">@Instagram</div>
+  <div class="container-fluid px-0">
+    <div class="row gx-0 insta-row">
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (1).jpg" alt="img1" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (1).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (2).jpg" alt="img2" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (2).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (3).jpg" alt="img3" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (3).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (4).jpg" alt="img4" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (4).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (5).jpg" alt="img5" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (5).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (6).jpg" alt="img6" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (6).jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 m-0 d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <img id="modalImage" src="" alt="modal image" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prev and Next Buttons -->
+<button id="prevBtn">&#10094;</button>
+<button id="nextBtn">&#10095;</button>
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>About</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, nam!</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-phone"></i> +1 987 654 3210</p>
+        <p><i class="fas fa-envelope"></i> mail@support.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 1234 Altschul, New York, NY 10027-0000</p>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <p>Monday - Thursday<br><strong>10:00 AM – 11:00 PM</strong></p>
+        <p>Friday - Sunday<br><strong>12:00 AM – 03:00 AM</strong></p>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <p>Get Latest Food Recipe At Your Inbox</p>
+      <form>
+        <input type="email" placeholder="Enter Email">
+        <button type="submit"><i class="fas fa-envelope"></i></button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2019 a theme by <a href="#">themefisher.com</a></p>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Use of terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

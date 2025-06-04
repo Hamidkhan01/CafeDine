@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CayeDine - Restaurant</title>
+
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ 
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.03);
+      padding: 20px 50px;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .navbar-brand {
+      font-family: 'Look Sans Bold', cursive;
+      font-size: 2rem;
+    }
+
+    .nav-link {
+      margin: 0 10px;
+      position: relative;
+      transition: all 0.3s;
+      padding: 8px 15px;
+      border-radius: 4px;
+    }
+
+    .nav-link:hover {
+      background-color: red;
+      color: white !important;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    }
+
+    .dropdown-menu {
+      background-color: white;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: black !important;
+      background-color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background-color: red;
+      color: white !important;
+    }
+
+   .dropdown-toggle::after {
+  display: none;
+}
+
+    .about-section:first-of-type {
+      background: url('img/about bg.jpg') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      height: 60vh;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .about-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .about-text h1 {
+      font-size: 100px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* Responsive navbar */
+    @media (max-width: 992px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .nav-link {
+        display: block;
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .dropdown-menu {
+        position: static;
+        float: none;
+      }
+
+      .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+      }
+    }
+
+
+.about-us-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+/* Videos */ 
+.gallery-section {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #fff;
+    }
+
+    .gallery-header {
+        margin-bottom: 40px;
+    }
+
+    .gallery-header .subtitle {
+        color: #ff5757; /* A shade of red */
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+
+    .gallery-header .title {
+        font-size: 2.5em;
+        color: #333;
+        line-height: 1.3;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .video-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 30px; 
+        flex-wrap: wrap; 
+    }
+
+    .video-item {
+        position: relative;
+        width: 300px; 
+        height: 200px; 
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .video-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .video-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: rgba(255, 255, 255, 0.7); 
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.9; 
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .video-item:hover .play-button {
+        opacity: 1; 
+    }
+
+    .play-button::before {
+        content: '';
+        border-width: 10px 0 10px 15px;
+        border-style: solid;
+        border-color: transparent transparent transparent #ff5757;
+        margin-left: 5px; 
+    }
+
+    /* Basic responsiveness */
+    @media (max-width: 768px) {
+        .gallery-header .title {
+            font-size: 2em;
+        }
+
+        .video-gallery {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-item {
+            width: 90%; 
+            max-width: 350px; 
+        }
+    }
+
+
+    /* Another */ 
+
+        .more-gallery-section {
+        font-family: Arial, sans-serif;
+        padding: 80px 20px;
+        background-color: #f8f8f8; /* Light background to differentiate sections */
+        max-width: 1200px; /* Limit width of the section */
+        margin: 0 auto; /* Center the section */
+    }
+
+    .gallery-intro {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 60px; /* Space between title and description */
+        margin-bottom: 50px;
+        text-align: left;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+
+    .gallery-intro .intro-text {
+        flex: 1; /* Allows it to take available space */
+        min-width: 250px; /* Minimum width before wrapping */
+        max-width: 350px;
+    }
+
+    .gallery-intro .intro-text h2 {
+        font-size: 2.8em;
+        color: #333;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .gallery-intro .intro-description {
+        flex: 2; /* Allows it to take more space */
+        min-width: 300px; /* Minimum width before wrapping */
+        max-width: 600px;
+    }
+
+    .gallery-intro .intro-description p {
+        font-size: 1.05em;
+        color: #666;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns, equal width */
+        gap: 20px; /* Space between grid items */
+        max-width: 960px; /* Adjust grid max width */
+        margin: 0 auto; /* Center the grid */
+    }
+
+    .grid-item {
+        border-radius: 8px;
+        overflow: hidden; /* Ensures image corners are rounded */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .grid-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid-item img {
+        width: 100%;
+        height: 100%; /* Make images fill the grid item */
+        display: block;
+        object-fit: cover; /* Cover the area, cropping if necessary */
+        transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover img {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .image-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        }
+
+        .gallery-intro {
+            flex-direction: column; /* Stack header items */
+            text-align: center;
+            align-items: center;
+        }
+
+        .gallery-intro .intro-text,
+        .gallery-intro .intro-description {
+            max-width: 90%; /* Adjust width for stacked items */
+            text-align: center;
+        }
+
+        .gallery-intro .intro-text h2 {
+            font-size: 2.2em;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .image-grid {
+            grid-template-columns: 1fr; /* Single column on small screens */
+        }
+
+        .gallery-intro .intro-text h2 {
+            font-size: 1.8em;
+        }
+
+        .more-gallery-section {
+            padding: 40px 15px;
+        }
+    }
+
+    .modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.modal-body {
+  pointer-events: none;
+  height: 100vh;
+}
+
+.modal-body img {
+  pointer-events: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+#prevBtn,
+#nextBtn {
+  display: none; 
+}
+
+
+
+#prevBtn,
+#nextBtn {
+  position: fixed; 
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2000; 
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  height: 60px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 4px 4px 0;
+}
+
+#prevBtn {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+#nextBtn {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+
+
+/* Footer */
+    .footer {
+      background-color: #111;
+      color: #bbb;
+      padding: 60px 20px 30px;
+      font-family: sans-serif;
+    }
+
+    .footer a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    .footer h4 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-col p {
+      margin: 8px 0;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .footer-newsletter {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .footer-newsletter form {
+      display: inline-flex;
+      border: 1px solid #333;
+      margin-top: 10px;
+    }
+
+    .footer-newsletter input {
+      padding: 10px;
+      border: none;
+      background: #111;
+      color: #fff;
+      outline: none;
+      width: 250px;
+    }
+
+    .footer-newsletter button {
+      background: #111;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #222;
+      padding-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-bottom a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- About Hero Section -->
+  <section class="about-section">
+    <div class="overlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" style="height: 80px;" alt="Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+         <li class="nav-item"><a class="nav-link text-white" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="about.html">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="recipes.html">RECIPES</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
+
+        <!-- Dropdown for Reservation -->
+        <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  RESERVATION <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="reservation.html">Reservation</a>
+            <a class="dropdown-item" href="cart.html">Cart</a>
+            <a class="dropdown-item" href="shipping.html">Shipping</a>
+            <a class="dropdown-item" href="payment.html">Payment</a>
+            <a class="dropdown-item" href="confirmation.html">Confirmation</a>
+          </div>
+        </li>
+
+        <!-- Dropdown for Blog -->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  BLOG <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="blog.html">Blog</a>
+            <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="contact.html">CONTACT</a></li>
+      </ul>
+      </div>
+    </nav>
+
+    <div class="about-text">
+      <h1>Our Gallery</h1>
+    </div>
+  </section>
+
+<section class="gallery-section">
+    <div class="gallery-header">
+        <p class="subtitle">Our Gallery</p>
+        <h2 class="title">Awesome Place Good Decoration To Spend Quality Time</h2>
+    </div>
+    <div class="video-gallery">
+        <div class="video-item">
+            <img src="img/v1t.png" alt="Interior view of a bar or restaurant">
+
+        </div>
+        <div class="video-item">
+            <img src="img/v1t2.png" alt="A well-decorated bar area with stools">
+
+        </div>
+        <div class="video-item">
+            <img src="img/v1t3.png" alt="A counter with drinks and decorations">
+        </div>
+    </div>
+</section>
+
+
+<section class="more-gallery-section">
+    <div class="gallery-intro">
+        <div class="intro-text">
+            <h2>Lets Check Out <br> Some More</h2>
+        </div>
+        <div class="intro-description">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis magna a quistellus
+                sollicitudin. Aliquam eu massa mattismo facilis ut veroprem accusantium dolorem et quasi, qui
+                excepturi sint occaecati vero.
+            </p>
+        </div>
+    </div>
+    <div class="image-grid">
+        <div class="grid-item">
+            <img src="img/gp1.jpg" class="g-img" alt="Gallery Image 1">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp2.jpg" alt="Gallery Image 2">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp3.jpg" alt="Gallery Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp4.jpg" alt="Gallery Image 4">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp5.jpg" alt="Gallery Image 5">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp6.jpg" alt="Gallery Image 6">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp7.jpg" alt="Gallery Image 7">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp8.jpg" alt="Gallery Image 8">
+        </div>
+        <div class="grid-item">
+            <img src="img/gp9.jpg" alt="Gallery Image 9">
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 m-0 d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <img id="modalImage" src="" alt="modal image" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prev and Next Buttons -->
+<button id="prevBtn">&#10094;</button>
+<button id="nextBtn">&#10095;</button>
+
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>About</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, nam!</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-phone"></i> +1 987 654 3210</p>
+        <p><i class="fas fa-envelope"></i> mail@support.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 1234 Altschul, New York, NY 10027-0000</p>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <p>Monday - Thursday<br><strong>10:00 AM – 11:00 PM</strong></p>
+        <p>Friday - Sunday<br><strong>12:00 AM – 03:00 AM</strong></p>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <p>Get Latest Food Recipe At Your Inbox</p>
+      <form>
+        <input type="email" placeholder="Enter Email">
+        <button type="submit"><i class="fas fa-envelope"></i></button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2019 a theme by <a href="#">themefisher.com</a></p>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Use of terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- JS-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

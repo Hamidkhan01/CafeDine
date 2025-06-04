@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CayeDine - Restaurant</title>
+
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ 
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.03);
+      padding: 20px 50px;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .navbar-brand {
+      font-family: 'Look Sans Bold', cursive;
+      font-size: 2rem;
+    }
+
+    .nav-link {
+      margin: 0 10px;
+      position: relative;
+      transition: all 0.3s;
+      padding: 8px 15px;
+      border-radius: 4px;
+    }
+
+    .nav-link:hover {
+      background-color: red;
+      color: white !important;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    }
+
+    .dropdown-menu {
+      background-color: white;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: black !important;
+      background-color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background-color: red;
+      color: white !important;
+    }
+
+   .dropdown-toggle::after {
+  display: none;
+}
+
+    .about-section:first-of-type {
+      background: url('img/about bg.jpg') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      height: 60vh;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .about-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .about-text h1 {
+      font-size: 100px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* Responsive navbar */
+    @media (max-width: 992px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .nav-link {
+        display: block;
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .dropdown-menu {
+        position: static;
+        float: none;
+      }
+
+      .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+      }
+    }
+
+
+.about-us-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+
+
+
+/* About Us */
+.image-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+}
+
+
+.about-image-1 {
+    width: 180px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-image-2 {
+    width: 250px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+}
+
+
+.text-content-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.text-content-column h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.text-content-column p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #7f8c8d;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.text-content-column ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.text-content-column li {
+    font-size: 15px;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+
+.cta-button {
+    position: absolute;
+    top: 90px;
+    left: 200px; 
+    background-color: #D22D33;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: left;
+    text-decoration: none;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.cta-button {
+    position: absolute;
+    top: 93%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.cta-button .cta-main-text {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.cta-button .cta-phone {
+    font-size: 13px;
+    display: block;
+}
+
+/* RESPONSIVE FOR SMALL DEVICES */
+@media (max-width: 768px) {
+    .about-us-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .about-image-1,
+    .about-image-2 {
+        width: 90vw;
+        height: auto;
+    }
+
+    .cta-button {
+        top: 10px;
+        left: 10px;
+    }
+
+    .text-content-column {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-button {
+        position: static !important;    
+        margin-top: 20px;               
+        width: fit-content;             
+        padding: 10px 15px;             
+        display: inline-block;          
+        transform: none !important;    
+        left: auto !important;
+        top: auto !important;
+        text-align: left;               
+        box-sizing: border-box;         
+    }
+}
+
+/* Team */ 
+.team-section {
+  padding: 120px 0;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.heading {
+  margin-bottom: 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+/* Flexbox grid for chefs */
+.chef-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.chef-item {
+  flex: 1 1 300px;
+  max-width: 350px;
+  background: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .chef-item {
+    text-align: left;
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.chef-name {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.chef-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.chef-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .social-links {
+    justify-content: flex-start;
+  }
+}
+
+.social-links li {
+  display: inline-block;
+}
+
+.social-links a {
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #D22D33; 
+}
+
+
+.call-to-action {
+  position: relative;
+  padding: 60px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  overflow: hidden;
+  color: white;
+}
+
+.cta-bg-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none; 
+}
+
+.call-to-action .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.call-to-action .container {
+  position: relative;
+  z-index: 2;
+  text-align: start;
+}
+
+.call-to-action .font-extra {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.call-to-action h2 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.btn-white {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-white:hover {
+  background-color: #e51d1d;
+  color: white;
+  text-decoration: none;
+}
+
+/* Service */ 
+.section {
+  padding: 120px 0;
+  background-color: white;
+}
+
+/* Service Grid Layout */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Service Item Style */
+.service-item {
+
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.service-item i {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #b8a5a5; /* Theme color */
+}
+
+.service-item i:hover {
+  color: #e51d1d;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Typography */
+.font-extra {
+  font-family: 'Georgia', serif;
+}
+
+.font-md {
+  font-size: 36px;
+  line-height: 46px;
+  font-weight: bold;
+}
+
+.text-primary {
+  color: #D22D33;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.heading h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Section with minimal height and vertical centering */
+.testimonial-section {
+  background-color: #e0e0e0; /* Light grey */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh; /* Reduced height */
+  padding: 0;
+}
+
+/* Inner wrapper for content width and spacing */
+.centered-wrapper {
+  width: 100%;
+  max-width: 960px;
+  padding: 10px 15px;
+}
+
+/* Tighter testimonial spacing */
+.testimonial {
+  padding: 10px 0;
+}
+
+/* Title and subtitle font sizing */
+.font-md-sm {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Blockquote style */
+.testimonial blockquote {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Author image style */
+.author img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Insta Section */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.instagram-section {
+  background-color: #111;
+  overflow: hidden;
+}
+
+.insta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.insta-img:hover {
+  opacity: 0.85;
+}
+
+
+.insta-row {
+  margin: 0;
+}
+
+.insta-center-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 8px 20px;
+  font-size: 16px;
+  z-index: 999;
+  border-radius: 3px;
+}
+.modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.modal-body {
+  pointer-events: none;
+  height: 100vh;
+}
+
+.modal-body img {
+  pointer-events: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+#prevBtn,
+#nextBtn {
+  display: none; 
+}
+
+
+
+#prevBtn,
+#nextBtn {
+  position: fixed; 
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2000; 
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  height: 60px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 4px 4px 0;
+}
+
+#prevBtn {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+#nextBtn {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+
+
+    /* Footer */
+    .footer {
+      background-color: #111;
+      color: #bbb;
+      padding: 60px 20px 30px;
+      font-family: sans-serif;
+    }
+
+    .footer a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    .footer h4 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-col p {
+      margin: 8px 0;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .footer-newsletter {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .footer-newsletter form {
+      display: inline-flex;
+      border: 1px solid #333;
+      margin-top: 10px;
+    }
+
+    .footer-newsletter input {
+      padding: 10px;
+      border: none;
+      background: #111;
+      color: #fff;
+      outline: none;
+      width: 250px;
+    }
+
+    .footer-newsletter button {
+      background: #111;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #222;
+      padding-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-bottom a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- About Hero Section -->
+  <section class="about-section">
+    <div class="overlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" style="height: 80px;" alt="Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+         <li class="nav-item"><a class="nav-link text-white" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="about.html">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="recipes.html">RECIPES</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
+
+        <!-- Dropdown for Reservation -->
+        <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  RESERVATION <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="reservation.html">Reservation</a>
+            <a class="dropdown-item" href="cart.html">Cart</a>
+            <a class="dropdown-item" href="shipping.html">Shipping</a>
+            <a class="dropdown-item" href="payment.html">Payment</a>
+            <a class="dropdown-item" href="confirmation.html">Confirmation</a>
+          </div>
+        </li>
+
+        <!-- Dropdown for Blog -->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  BLOG <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="blog.html">Blog</a>
+            <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="contact.html">CONTACT</a></li>
+      </ul>
+      </div>
+    </nav>
+
+    <div class="about-text">
+      <h1>About Us</h1>
+    </div>
+  </section>
+
+<section class="about-us-section">
+        <div class="image-container">
+            <img src="img/aboutp1.jpg" alt="Comfortable cafe seating with pendant lights" class="about-image-1">
+            <img src="img/aboutp2.jpg" alt="Cafe interior with counter and staff" class="about-image-2">
+        </div>
+        <div class="text-content-column">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente necessitatibus id, animi nemo quos eos minus adipisci veritatis quibusdam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. repudiandae eius doloribus accusamus fugit.</p>
+            <ul>
+                <li>- Clean Environment</li>
+                <li>- Experience Chefs</li>
+                <li>- Fresh And Creative Dishes</li>
+            </ul>
+            <a href="#" class="cta-button">
+                <span class="cta-main-text">Book Now !</span>
+                <span class="cta-phone">+34567890</span>
+            </a>
+        </div>
+    </section>
+
+
+ <section class="team-section">
+  <div class="container">
+    <div class="heading text-center mb-5">
+      <span class="text-primary font-extra font-md">Meet The Chefs</span>
+      <h2 class="mt-3 mb-4">We have experienced and creative chefs to start</h2>
+    </div>
+
+    <div class="chef-row">
+      <div class="chef-item">
+        <img src="img/chef_1.jpg" alt="Daniel Graham" class="img-fluid">
+        <h3 class="chef-name">Daniel Graham</h3>
+        <p class="chef-title">Master chef</p>
+        <p class="chef-description">Far from the countries Vokalia and Consonantia, there live the blind texts. They live in Bookmarksgrove.</p>
+        <ul class="social-links">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="chef-item">
+        <img src="img/chef_2.jpg" alt="Nick Browning" class="img-fluid">
+        <h3 class="chef-name">Nick Browning</h3>
+        <p class="chef-title">Master chef</p>
+        <p class="chef-description">Far from the countries Vokalia and Consonantia, there live the blind texts. They live in Bookmarksgrove.</p>
+        <ul class="social-links">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="chef-item">
+        <img src="img/chef_3.jpg" alt="Willium Jack" class="img-fluid">
+        <h3 class="chef-name">Willium Jack</h3>
+        <p class="chef-title">Master chef</p>
+        <p class="chef-description">Far from the countries Vokalia and Consonantia, there live the blind texts. They live in Bookmarksgrove.</p>
+        <ul class="social-links">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="call-to-action">
+  <img src="../img/cta-bg.jpg" alt="Background" class="cta-bg-img" />
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <span class="font-extra text-md-2">Prepare The Best Dishes</span>
+        <h2 class="mt-3 mb-4">Are you looking for a quite place?</h2>
+        <a href="#" class="btn btn-white">book now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section service">
+  <div class="container">
+    <div class="heading text-center">
+      <span class="text-primary font-extra font-md">Our services</span>
+      <h2 class="mt-3 mb-4">We provide good services with lots of facilities</h2>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-item">
+        <i class="fas fa-martini-glass-citrus"></i>
+        <h3>Fresh Food</h3>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-bowl-food"></i>
+        <h3>Quality Cuisine</h3>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-bread-slice"></i>
+        <h3>Bread & Pancake</h3>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-carrot"></i>
+        <h3>Fresh Vegies Salad</h3>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Event Management</h3>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-utensils"></i>
+        <h3>Reserve Now</h3>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial-section">
+  <div class="centered-wrapper container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <span class="text-primary font-extra font-md-sm d-block mb-1">customers review</span>
+        <h2 class="font-md-sm mb-1">Our customers say about us</h2>
+      </div>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <blockquote class="testimonial text-center px-2">
+            <p>“Duden flows by their place and supplies it with the necessary regelialia.”</p>
+            <div class="author">
+              <img src="img/maxim.jpg" alt="Maxim Smith">
+              <h4>Maxim Smith</h4>
+              <p>CEO, Founder</p>
+            </div>
+          </blockquote>
+        </div>
+        <div class="carousel-item">
+          <blockquote class="testimonial text-center px-2">
+            <p>“Far far away, behind the word mountains, far from Vokalia and Consonantia.”</p>
+            <div class="author">
+              <img src="img/gerek.jpg" alt="Geert Green">
+              <h4>Geert Green</h4>
+              <p>CEO, Founder</p>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Instagram Section -->
+<section class="instagram-section position-relative">
+  <div class="insta-center-btn">@Instagram</div>
+  <div class="container-fluid px-0">
+    <div class="row gx-0 insta-row">
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (1).jpg" alt="img1" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (1).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (2).jpg" alt="img2" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (2).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (3).jpg" alt="img3" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (3).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (4).jpg" alt="img4" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (4).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (5).jpg" alt="img5" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (5).jpg">
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 p-0">
+        <img src="img/g1 (6).jpg" alt="img6" class="insta-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="img/g1 (6).jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 m-0 d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <img id="modalImage" src="" alt="modal image" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prev and Next Buttons -->
+<button id="prevBtn">&#10094;</button>
+<button id="nextBtn">&#10095;</button>
+
+
+
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>About</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, nam!</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-phone"></i> +1 987 654 3210</p>
+        <p><i class="fas fa-envelope"></i> mail@support.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 1234 Altschul, New York, NY 10027-0000</p>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <p>Monday - Thursday<br><strong>10:00 AM – 11:00 PM</strong></p>
+        <p>Friday - Sunday<br><strong>12:00 AM – 03:00 AM</strong></p>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <p>Get Latest Food Recipe At Your Inbox</p>
+      <form>
+        <input type="email" placeholder="Enter Email">
+        <button type="submit"><i class="fas fa-envelope"></i></button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2019 a theme by <a href="#">themefisher.com</a></p>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Use of terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- JS-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

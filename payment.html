@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CayeDine - Restaurant</title>
+
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ 
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.03);
+      padding: 20px 50px;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .navbar-brand {
+      font-family: 'Look Sans Bold', cursive;
+      font-size: 2rem;
+    }
+
+    .nav-link {
+      margin: 0 10px;
+      position: relative;
+      transition: all 0.3s;
+      padding: 8px 15px;
+      border-radius: 4px;
+    }
+
+    .nav-link:hover {
+      background-color: red;
+      color: white !important;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    }
+
+    .dropdown-menu {
+      background-color: white;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: black !important;
+      background-color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background-color: red;
+      color: white !important;
+    }
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+    .about-section:first-of-type {
+      background: url('img/about bg.jpg') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      height: 60vh;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .about-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .about-text h1 {
+      font-size: 100px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* Responsive navbar */
+    @media (max-width: 992px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .nav-link {
+        display: block;
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .dropdown-menu {
+        position: static;
+        float: none;
+      }
+
+      .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+      }
+    }
+
+
+.about-us-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+
+/* Footer */
+    .footer {
+      background-color: #111;
+      color: #bbb;
+      padding: 60px 20px 30px;
+      font-family: sans-serif;
+    }
+
+    .footer a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    .footer h4 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-col p {
+      margin: 8px 0;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .footer-newsletter {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .footer-newsletter form {
+      display: inline-flex;
+      border: 1px solid #333;
+      margin-top: 10px;
+    }
+
+    .footer-newsletter input {
+      padding: 10px;
+      border: none;
+      background: #111;
+      color: #fff;
+      outline: none;
+      width: 250px;
+    }
+
+    .footer-newsletter button {
+      background: #111;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #222;
+      padding-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-bottom a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- About Hero Section -->
+  <section class="about-section">
+    <div class="overlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" style="height: 80px;" alt="Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+         <li class="nav-item"><a class="nav-link text-white" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="about.html">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="recipes.html">RECIPES</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
+
+        <!-- Dropdown for Reservation -->
+        <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  RESERVATION <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="reservation.html">Reservation</a>
+            <a class="dropdown-item" href="cart.html">Cart</a>
+            <a class="dropdown-item" href="shipping.html">Shipping</a>
+            <a class="dropdown-item" href="payment.html">Payment</a>
+            <a class="dropdown-item" href="confirmation.html">Confirmation</a>
+          </div>
+        </li>
+
+        <!-- Dropdown for Blog -->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
+  BLOG <i class="fa-solid fa-caret-down arrow"></i>
+</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="blog.html">Blog</a>
+            <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="contact.html">CONTACT</a></li>
+      </ul>
+      </div>
+    </nav>
+
+    <div class="about-text">
+      <h1>Payment</h1>
+    </div>
+  </section>
+
+
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>About</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, nam!</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-phone"></i> +1 987 654 3210</p>
+        <p><i class="fas fa-envelope"></i> mail@support.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 1234 Altschul, New York, NY 10027-0000</p>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <p>Monday - Thursday<br><strong>10:00 AM – 11:00 PM</strong></p>
+        <p>Friday - Sunday<br><strong>12:00 AM – 03:00 AM</strong></p>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <p>Get Latest Food Recipe At Your Inbox</p>
+      <form>
+        <input type="email" placeholder="Enter Email">
+        <button type="submit"><i class="fas fa-envelope"></i></button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2019 a theme by <a href="#">themefisher.com</a></p>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Use of terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- JS-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
