@@ -146,6 +146,215 @@
   }
 }
 
+/* Reservation */ 
+.reservation-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.reservation-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.reservation-form-content {
+    flex: 2;
+    min-width: 450px;
+    text-align: left;
+}
+
+.reservation-subheading {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reservation-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-triple {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group-triple input,
+.form-group-triple select {
+    flex: 1;
+    min-width: calc(33.33% - 14px);
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-group-triple input::placeholder,
+.form-group-triple select option[value=""] {
+    color: #888;
+}
+
+.form-group-triple input:focus,
+.form-group-triple select:focus {
+    background-color: #eee;
+    border-color: #e74c3c;
+}
+
+.reserve-now-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.reserve-now-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.reservation-info-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f7f7f7;
+    padding: 40px;
+    border: 1px dotted #ccc;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.info-subheading {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.info-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.info-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.info-time {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.info-call-us {
+    font-size: 18px;
+    color: #e74c3c;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.info-phone {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.reservation-form input.invalid,
+.reservation-form select.invalid {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.5);
+}
+
+@media (max-width: 992px) {
+    .reservation-heading {
+        font-size: 38px;
+    }
+
+    .form-group-triple input,
+    .form-group-triple select {
+        min-width: calc(50% - 10px);
+    }
+
+    .reservation-form-content,
+    .reservation-info-card {
+        min-width: unset;
+        flex: 1 1 100%;
+    }
+
+    .reservation-form-content {
+        order: 2;
+    }
+
+    .reservation-info-card {
+        order: 1;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .reservation-heading {
+        font-size: 32px;
+    }
+
+    .reservation-section {
+        padding: 50px 15px;
+    }
+
+    .reservation-info-card {
+        padding: 30px;
+    }
+
+    .info-heading {
+        font-size: 28px;
+    }
+
+    .info-phone {
+        font-size: 28px;
+    }
+
+    .form-group-triple input,
+    .form-group-triple select {
+        min-width: 100%;
+    }
+}
 
 
 /* Footer */
@@ -292,7 +501,47 @@
     </div>
   </section>
 
+<section class="reservation-section" id="reservation">
+    <div class="container reservation-container">
+        <div class="reservation-form-content">
+            <p class="reservation-subheading">Reservation</p>
+            <h2 class="reservation-heading">Reserve Your Seat For Betterment</h2>
 
+            <form class="reservation-form" id="reservationForm">
+                <div class="form-group-triple">
+                    <input type="text" id="res-name" name="name" placeholder="Full Name" required>
+                    <input type="email" id="res-email" name="email" placeholder="Email Address" required>
+                    <input type="tel" id="res-phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group-triple">
+                    <select id="num-persons" name="persons" required>
+                        <option value="">Number of Persons</option>
+                        <option value="1">1 person</option>
+                        <option value="2">2 persons</option>
+                        <option value="3">3 persons</option>
+                        <option value="4">4 persons</option>
+                        <option value="5">5 persons</option>
+                        <option value="6">6+ persons</option>
+                    </select>
+                    <input type="date" id="res-date" name="date" required>
+                    <input type="time" id="res-time" name="time" required>
+                </div>
+                <button type="submit" class="reserve-now-btn">RESERVE NOW</button>
+            </form>
+        </div>
+
+        <div class="reservation-info-card">
+            <p class="info-subheading">Check availability!</p>
+            <h3 class="info-heading">Opening Times</h3>
+            <p class="info-text">Monday - Thursday</p>
+            <p class="info-time">9.00 - 12.00</p>
+            <p class="info-text">Friday - Sunday</p>
+            <p class="info-time">2.00 - 8.00</p>
+            <p class="info-call-us">Call Us For</p>
+            <p class="info-phone">02 34597879</p>
+        </div>
+    </div>
+</section>
 
   <!-- Footer Section -->
 <footer class="footer">
