@@ -126,19 +126,34 @@ html {
   color: white;
 }
 
+/* Mobile responsiveness for carousel text */
 @media (max-width: 768px) {
+  .carousel-caption {
+    left: 20px;
+    right: 20px;
+    width: auto;
+    max-width: 90%;
+    text-align: center;
+  }
+
   .carousel-caption h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .carousel-caption h1 span {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .carousel-caption p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .btn-menu {
+    font-size: 0.9rem;
+    padding: 8px 20px;
   }
 }
+
 
 
 .navbar {
