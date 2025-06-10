@@ -446,5 +446,5 @@ const cartLayout = document.querySelector('.cart-layout');
         updateCartTotals();
     }
 
-    /* Shipping */ 
+
     
