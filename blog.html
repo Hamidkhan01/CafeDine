@@ -150,7 +150,6 @@
 
 /* Blog */
 
-/* Blog Section Styles */
 .blog-section {
     padding: 40px 20px;
     background-color: #fff;
@@ -164,10 +163,9 @@
     gap: 40px;
 }
 
-/* Main Blog Posts Column */
 .blog-posts-column {
-    flex: 2; /* Takes up 2/3 of the space */
-    min-width: 0; /* Prevents flex items from overflowing on smaller flex containers */
+    flex: 2;
+    min-width: 0;
 }
 
 .blog-post-card {
@@ -190,7 +188,7 @@
     margin-bottom: 15px;
 }
 .post-meta .meta-author {
-    color: #dc3545; /* Red color for author */
+    color: #dc3545;
     font-weight: bold;
 }
 
@@ -232,10 +230,9 @@
     background-color: #000000;
 }
 
-/* Sidebar Column */
 .sidebar-column {
-    flex: 1; /* Takes up 1/3 of the space */
-    min-width: 280px; /* Ensures sidebar doesn't get too squished before wrapping */
+    flex: 1;
+    min-width: 280px;
 }
 
 .sidebar-widget {
@@ -251,7 +248,6 @@
     border-bottom: 2px solid #f0f0f0;
 }
 
-/* Search Form */
 .search-form {
     display: flex;
     border: 1px solid #ddd;
@@ -270,12 +266,11 @@
     background: none;
     padding: 0 15px;
     cursor: pointer;
-    font-family: serif; /* For a stylized search icon character */
+    font-family: serif;
     font-size: 20px;
     color: #555;
 }
 
-/* Follow Us */
 .social-links a {
     display: inline-block;
     width: 30px;
@@ -288,14 +283,13 @@
     margin-right: 5px;
     border-radius: 3px;
     transition: background-color 0.3s, color 0.3s;
-    font-family: sans-serif; /* Use actual icons for a real site */
+    font-family: sans-serif;
 }
 .social-links a:hover {
     background-color: #333;
     color: #fff;
 }
 
-/* Popular Posts */
 .popular-posts-list {
     list-style: none;
     padding: 0;
@@ -329,7 +323,6 @@
     color: #888;
 }
 
-/* Categories List */
 .categories-list {
     list-style: none;
     padding: 0;
@@ -347,7 +340,6 @@
     color: #dc3545;
 }
 
-/* Tag Cloud */
 .tag-cloud {
     display: flex;
     flex-wrap: wrap;
@@ -368,47 +360,42 @@
     color: #fff;
 }
 
-/* =================================== */
-/* ===== MOBILE RESPONSIVE STYLES ==== */
-/* =================================== */
-
 @media (max-width: 992px) {
     .blog-container {
-        flex-direction: column; /* Stack main content and sidebar vertically */
+        flex-direction: column;
     }
     .sidebar-column {
-        min-width: 100%; /* Allow sidebar to take full width when stacked */
+        min-width: 100%;
     }
 }
 
 @media (max-width: 768px) {
     .blog-section {
-        padding: 30px 15px; /* Reduce overall section padding on mobile */
+        padding: 30px 15px;
     }
     .blog-container {
-        gap: 40px; /* Adjust gap between stacked main content and sidebar */
+        gap: 40px;
     }
     .post-title {
-        font-size: 24px; /* Make post titles smaller for mobile readability */
+        font-size: 24px;
     }
     .post-excerpt {
         font-size: 14px;
     }
     .widget-title {
-        font-size: 18px; /* Make widget titles smaller */
+        font-size: 18px;
     }
 }
 
 @media (max-width: 480px) {
     .post-title {
-        font-size: 20px; /* Further reduce title size on very small screens */
+        font-size: 20px;
     }
     .read-more-btn {
-        padding: 10px 20px; /* Make button slightly smaller */
+        padding: 10px 20px;
         font-size: 12px;
     }
 }
-
 
 
 
@@ -523,7 +510,7 @@
           <li class="nav-item"><a class="nav-link text-white" href="recipes.html">RECIPES</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
 
-        <!-- Dropdown for Reservation -->
+
         <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
   RESERVATION <i class="fa-solid fa-caret-down arrow"></i>
@@ -537,7 +524,6 @@
           </div>
         </li>
 
-        <!-- Dropdown for Blog -->
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
   BLOG <i class="fa-solid fa-caret-down arrow"></i>

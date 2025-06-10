@@ -146,10 +146,7 @@
   }
 }
 
-/* Blog Single */
-/* ==================================================
-   General Body & Blog Layout Styles
-   ================================================== */
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -167,12 +164,9 @@ body {
     gap: 40px;
 }
 
-/* ==================================================
-   Main Blog Post Column (Left Side)
-   ================================================== */
 .blog-posts-column {
-    flex: 2; /* Takes up 2/3 of the space */
-    min-width: 0; /* Prevents flex item overflow */
+    flex: 2;
+    min-width: 0;
 }
 
 .single-post-card {
@@ -186,7 +180,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Post Meta & Title */
 .post-meta {
     font-size: 13px;
     color: #888;
@@ -194,7 +187,7 @@ body {
 }
 
 .post-meta .meta-author {
-    color: #dc3545; /* Red color for author */
+    color: #dc3545;
     font-weight: bold;
 }
 
@@ -206,7 +199,6 @@ body {
     color: #222;
 }
 
-/* Post Body Content */
 .post-body p {
     font-size: 16px;
     line-height: 1.8;
@@ -224,11 +216,10 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Share Section */
 .share-section {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
+    flex-wrap: wrap;
     gap: 10px;
     padding: 20px 0;
     border-top: 1px solid #eee;
@@ -266,7 +257,6 @@ body {
     border-color: #333;
 }
 
-/* Comments Section */
 .comments-section,
 .comment-form-section {
     margin-top: 40px;
@@ -329,7 +319,6 @@ body {
     text-decoration: underline;
 }
 
-/* Comment Form */
 .comment-form .form-row {
     display: flex;
     gap: 20px;
@@ -374,12 +363,9 @@ body {
     background-color: #c82333;
 }
 
-/* ==================================================
-   Sidebar Column Styles (Right Side)
-   ================================================== */
 .sidebar-column {
     flex: 1;
-    min-width: 280px; /* Ensures sidebar doesn't get too squished before wrapping */
+    min-width: 280px;
 }
 
 .sidebar-widget {
@@ -395,20 +381,22 @@ body {
     border-bottom: 2px solid #f0f0f0;
 }
 
-/* Search Form */
 .search-form {
     display: flex;
     border: 1px solid #ddd;
 }
+
 .search-form input {
     border: none;
     padding: 12px;
     flex-grow: 1;
     font-size: 14px;
 }
+
 .search-form input:focus {
     outline: none;
 }
+
 .search-form button {
     border: none;
     background: none;
@@ -418,11 +406,11 @@ body {
     color: #555;
     transition: color 0.3s;
 }
+
 .search-form button:hover {
     color: #dc3545;
 }
 
-/* Follow Us */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -437,28 +425,31 @@ body {
     transition: background-color 0.3s, color 0.3s;
     font-size: 14px;
 }
+
 .social-links a:hover {
     background-color: #333;
     color: #fff;
 }
 
-/* Popular Posts */
 .popular-posts-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .popular-posts-list li {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
+
 .popular-posts-list img {
     width: 60px;
     height: 60px;
     margin-right: 15px;
     object-fit: cover;
 }
+
 .popular-posts-list .post-info a {
     text-decoration: none;
     color: #333;
@@ -468,38 +459,42 @@ body {
     margin-bottom: 5px;
     line-height: 1.3;
 }
+
 .popular-posts-list .post-info a:hover {
     color: #dc3545;
 }
+
 .popular-posts-list .post-info span {
     font-size: 12px;
     color: #888;
 }
 
-/* Categories List */
 .categories-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .categories-list li {
     padding: 8px 0;
     border-bottom: 1px dashed #eee;
 }
+
 .categories-list a {
     text-decoration: none;
     color: #555;
 }
+
 .categories-list a:hover {
     color: #dc3545;
 }
 
-/* Tag Cloud */
 .tag-cloud {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
+
 .tag-cloud a {
     display: inline-block;
     background-color: #f5f5f5;
@@ -510,18 +505,17 @@ body {
     border-radius: 3px;
     transition: background-color 0.3s, color 0.3s;
 }
+
 .tag-cloud a:hover {
     background-color: #dc3545;
     color: #fff;
 }
 
-/* ==================================================
-   Responsive Adjustments
-   ================================================== */
 @media (max-width: 992px) {
     .blog-container {
         flex-direction: column;
     }
+
     .sidebar-column {
         min-width: 100%;
         margin-top: 40px;
@@ -532,20 +526,25 @@ body {
     .blog-section {
         padding: 30px 15px;
     }
+
     .post-title {
         font-size: 26px;
     }
+
     .comment-form .form-row {
         flex-direction: column;
         gap: 20px;
-        margin-bottom: 0; /* Gap is now handling spacing, remove bottom margin */
+        margin-bottom: 0;
     }
+
     .comment-form .form-row .form-group {
-        margin-bottom: 20px; /* Add margin back to individual groups */
+        margin-bottom: 20px;
     }
+
     .comment-form .form-row .form-group:last-child {
-        margin-bottom: 0; /* Remove margin from last group in a row */
+        margin-bottom: 0;
     }
+
     .comment-form textarea {
         margin-bottom: 20px;
     }
@@ -555,11 +554,13 @@ body {
     .post-title {
         font-size: 22px;
     }
+
     .comment-item {
         flex-direction: column;
         align-items: flex-start;
     }
 }
+
 
 /* Footer */
     .footer {
@@ -670,7 +671,7 @@ body {
           <li class="nav-item"><a class="nav-link text-white" href="recipes.html">RECIPES</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="gallery.html">GALLERY</a></li>
 
-        <!-- Dropdown for Reservation -->
+
         <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
   RESERVATION <i class="fa-solid fa-caret-down arrow"></i>
@@ -684,7 +685,7 @@ body {
           </div>
         </li>
 
-        <!-- Dropdown for Blog -->
+
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white mx-2" href="#" id="reservationDropdown" data-toggle="dropdown">
   BLOG <i class="fa-solid fa-caret-down arrow"></i>
