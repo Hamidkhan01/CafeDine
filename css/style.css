@@ -91,6 +91,8 @@ html {
   color: #fff;
 }
 
+
+
 .carousel-caption h1 span {
   color: red;
   font-family: 'Great Vibes', cursive;
@@ -123,6 +125,21 @@ html {
   background-color: #000000;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-caption h1 span {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+}
+
 
 .navbar {
   background-color: transparent !important;
